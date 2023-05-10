@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './App.css';
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -53,30 +54,36 @@ function App() {
 
   return (
     <div className='container mt-3'>
-      <h1>Todo List</h1>
-      <div>
-        <input type="text" value={newTodoText} onChange={handleNewTodoTextChange} />
+      <h1 id="todoheader">Todo List</h1>
+      <div className='input-div'>
+        <input placeholder='Enter Your Task' type="text" value={newTodoText} onChange={handleNewTodoTextChange} />
         <button className='btn btn-primary' onClick={handleAddTodo}>Add Todo</button>
       </div>
-      <ul>
+      <div className='item-list'>
+      <ol>
         {todos.map((todo, index) => (
           <li key={index}>
             {editTodoIndex === index ? (
               <>
-                <input type="text" value={todo} onChange={handleEditTodoTextChange} />
+                <input  type="text" value={todo} onChange={handleEditTodoTextChange} />
+                <div className='actions'>
                 <button className='btn btn-secondary' onClick={handleEditTodoSave}>Save</button>
                 <button className='btn btn-dark' onClick={handleEditTodoCancel}>Cancel</button>
+                </div>
               </>
             ) : (
               <>
                 <span onClick={() => handleTodoClick(index)}>{todo}</span>
-                <button className='btn btn-danger' onClick={() => handleDeleteTodo(index)}>Delete</button>
+               <div className='actions'>
+               <button className='btn btn-danger' onClick={() => handleDeleteTodo(index)}>Delete</button>
                 <button className='btn btn-warning' onClick={() => handleTodoClick(index)}>Edit</button>
+               </div>
               </>
             )}
           </li>
         ))}
-      </ul>
+      </ol>
+      </div>
     </div>
   );
 }

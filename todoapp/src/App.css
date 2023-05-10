@@ -8,9 +8,88 @@ body{
   display: flex;
 justify-content: center;
 align-items: center;
-background-color: red;
+background-color: green;
 }
 .container{
+  /* border:1px solid black; */
+  padding:10px 10px;
+  background-color: white;
+  box-shadow:  0 0 12px grey;
+  width:450px;
+  /* max-width: 450px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container #todoheader{
+  text-align: center;
+  font-family: serif;
+  letter-spacing: 3px;
+  /* font-size: 45px; */
+  font-weight: 600;
+}
+.container .input-div{
   border:1px solid black;
-  padding:10px 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background: red;
+  border-radius: 10px;
+  margin-top: 10px;
+} 
+.container .input-div input{
+  background: transparent;
+    border: none;
+    outline: none;
+    padding: 0px 0px 0px 20px;
+    font-size: 18px;
+    color: #ffffff;
+    
+}
+.input-div input::placeholder{
+  color:#FFFFff;
+}
+.input-div button{
+  background: black;
+    color: white;
+    border: none;
+    padding: 9px 14px;
+}
+.container .item-list{
+  margin-top: 50px;
+  /* border:1px solid black; */
+  display: flex;
+  /* padding: 10px; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.container ol{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  padding:12px;
+  gap:20px;
+  border-radius: 10px;
+}
+ol li{
+    display: flex;
+   font-size: 20px;
+    font-family: serif;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    color: #ffffff;
+    
+}
+li .actions{
+  display: flex;
+    gap: 5px;
 }
